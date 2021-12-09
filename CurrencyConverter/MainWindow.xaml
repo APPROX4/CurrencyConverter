@@ -1,0 +1,205 @@
+﻿<Window x:Class="CurrencyConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Currency Converter"
+        Height="395" Width="890" 
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True" Icon="images/dollar.png">
+
+    <Border CornerRadius="20">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="291"/>
+                <ColumnDefinition Width="378"/>
+                <ColumnDefinition Width="221"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="369"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock  Text="APPROX"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                FontSize="20"
+                Foreground="#FFCE00FF" 
+                        Height="26" Width="249" 
+                        Margin="348,366,0,0" 
+                        Grid.Column="1" 
+                        FontFamily="Segoe UI Black" 
+                        Grid.ColumnSpan="2" 
+                        Grid.RowSpan="3">
+                <Span Foreground="White">Developer-</Span>
+            </TextBlock>
+
+
+            <Border CornerRadius="20" 
+                Margin="0,0,0,5"
+                MouseDown="Border_MouseDown" Grid.ColumnSpan="3">
+                <Border.Background>
+                    <ImageBrush ImageSource="images/download.jpg"/>
+                </Border.Background>
+
+
+                <Grid HorizontalAlignment="Stretch">
+
+                    <TextBox 
+                            Name="txtCurrency" 
+                            Width="200" Height="30" 
+                            FontSize="18" Margin="74,162,616,172"
+                            PreviewTextInput="NumberValidationTextBox"
+                            Background="White">
+
+                    </TextBox>
+
+                    <Image Height="82" Width="70" 
+                           Source="Images\dollar.png" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Center" Margin="0,33,0,0"/>
+
+
+                    <ComboBox 
+                        Height="30"
+                        Name="cmbFromCurrency"
+                        HorizontalAlignment="Center" 
+                        Margin="0,162,0,0" 
+                        VerticalAlignment="Top" Width="150" FontWeight="DemiBold" >
+                    </ComboBox>
+
+
+                    <ComboBox 
+                        Height="30"
+                        Name="cmbToCurrency"
+                        HorizontalAlignment="Left" 
+                        Margin="647,162,0,0"
+                        VerticalAlignment="Top" Width="150" FontWeight="DemiBold" >
+                    </ComboBox>
+
+                    <Label Content="Enter Amount" 
+                           FontSize="19"
+                           FontWeight="SemiBold"
+                           Foreground="White" Margin="72,129,681,202">
+
+                    </Label>
+
+                    <Label Content="To" 
+                           FontSize="19"
+                           FontWeight="SemiBold"
+                           Foreground="White" Margin="643,132,211,202">
+
+                    </Label>
+
+                    <Label Content="From" 
+                           FontSize="19"
+                           FontWeight="SemiBold"
+                           Foreground="White" Margin="367,129,446,204">
+
+                    </Label>
+
+                    <Label Content="Currency Converter" 
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           Foreground="White" Margin="5,-2,740,330">
+
+                    </Label>
+
+                    <StackPanel 
+                        
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Center" 
+                        Height="80" Width="500" Margin="0,198,0,0">
+                        <Label 
+                            Height="40" Width="500" 
+                            HorizontalContentAlignment="Center" 
+                            VerticalContentAlignment="Center" 
+                            Content="Converted Currency" 
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            FontSize="20">
+
+                        </Label>
+                        <Label 
+                            Name="lblCurrency" 
+                            Height="40" Width="500" 
+                            HorizontalContentAlignment="Center" 
+                            VerticalContentAlignment="Center" 
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            FontSize="20">
+
+                        </Label>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Left"
+                                Orientation="Horizontal" Margin="890,-308,0,0">
+
+
+                        <Button 
+                            Width="20" 
+                            Height="20" 
+                            Margin="-38,1,1,28" 
+                            Content="✖"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Pink"
+                            FontWeight="DemiBold"
+                            Click="Button_Click"/>
+                        <Button 
+                            Width="70" 
+                            Height="30"
+                            Content="Clear"
+                            FontSize="20"
+                            Background="#FFFF7D4C"
+                            BorderThickness="0"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Style="{StaticResource ButtonRound}"
+                            Click="Clear_Click"
+                            Margin="-99,0,0,-620" Cursor="Hand"/>
+                        <Button 
+                            Width="90" 
+                            Height="40"
+                            Content="Convert"
+                            FontSize="20"
+                            Background="#FF4CA1FF"
+                            BorderThickness="0"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Style="{StaticResource ButtonRound}"
+                            Click="Convert_Click"
+                            Margin="-279,0,0,-617" Cursor="Hand"/>
+                        <Button 
+                            Width="40" 
+                            Height="40"
+                            
+                            FontSize="20"
+                            
+                            BorderThickness="0"
+                            
+                            FontWeight="Bold"
+                            Style="{StaticResource ButtonRound}"
+                            Click="Button1_click"
+                            Margin="-1726,0,0,-616" Cursor="Hand">
+                            <Button.Background>
+                                <ImageBrush ImageSource="images/discord.ico"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
+
+
