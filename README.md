@@ -1,4 +1,5 @@
 # CurrencyConverter
+![alt text](https://cdn.discordapp.com/attachments/784645738461528074/918839292455972904/dollar.ico)
 
 
 ## Installation
